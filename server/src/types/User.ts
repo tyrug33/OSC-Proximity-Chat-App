@@ -1,3 +1,5 @@
+import { Location } from "./Location"
+
 export interface UserConfig {
   uid: string
   isConnected: boolean
@@ -11,19 +13,15 @@ export interface UserConfig {
     isPermaBanned: boolean
     reason: string
   }
+  displayName: string
+  userIcon?: {
+        foregroundImage: string
+        backgroundImage: string
+  }
 }
 
 export interface ConnectedUser {
     uid: string
     socketId: string
-    displayName: string
-    userIcon?: {
-        foregroundImage: string
-        backgroundImage: string
-    }
-    location: {
-        lat: number
-        lon: number
-        geohash: string
-    }
+    location: Location
 }
